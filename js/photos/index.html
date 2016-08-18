@@ -1,19 +1,19 @@
 <h1>These are all the wdinstagram photos!</h1>
 
-<div data-ng-repeat="photo in PhotosIndexViewModel.photos">
-  <h3>
-    {{photo.author}}
-  </h3>
-  <a data-ui-sref="photosShow({id: $index})"><img src="{{photo.photo_url}}" class="photo_small"/></a>
-  <p>
-    {{photo.body}}
-  </p>
-   <button data-ng-click="PhotosIndexViewModel.destroy(photo)">Delete</button>
-</div>
-
 <form>
   <input placeholder="Author" data-ng-model="PhotosIndexViewModel.newPhoto.author" />
   <input placeholder="Photo URL" data-ng-model="PhotosIndexViewModel.newPhoto.photo_url" />
   <input placeholder="Body" data-ng-model="PhotosIndexViewModel.newPhoto.body" />
   <button type="button" data-ng-click="PhotosIndexViewModel.create()">Create</button>
 </form>
+
+<div data-ng-repeat="photo in PhotosIndexViewModel.photos">
+  <h3>
+    {{photo.author}}
+  </h3>
+  <a data-ui-sref="photosShow({id: photo.id})"><img src="{{photo.photo_url}}" class="photo_small"/></a>
+  <p>
+    {{photo.body}}
+  </p>
+   <button data-ng-click="PhotosIndexViewModel.destroy(photo)">Delete</button>
+</div>
