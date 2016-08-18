@@ -9,7 +9,7 @@
   ])
 
   function PhotosShowControllerCallback($stateParams) {
-    this.photo = data[$stateParams.id];
+  
   }
 
 }());

@@ -2,5 +2,7 @@
 
 (function() {
   angular
-  .module("photos", [])
+  .module("photos", [
+    "ngResource"
+  ])
 }());

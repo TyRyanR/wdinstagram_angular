@@ -19,13 +19,6 @@
       controllerAs: "PhotosIndexViewModel",
       templateUrl: "js/photos/index.html"
     })
-    .state("photosShow", {
-      url: "/photos/:id",
-      controller: "PhotosShowController",
-      controllerAs: "PhotosShowViewModel",
-      templateUrl: "js/photos/show.html"
-    })
-
-  }
+      }
 
 })();
