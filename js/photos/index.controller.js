@@ -9,6 +9,18 @@
   ])
 
   function PhotosIndexControllerCallback( PhotosFactory ) {
-    this.photos = PhotosFactory.query();
+    var vm = this;
+
+    vm.photos = PhotosFactory.query();
+
+    vm.newPhoto = new PhotosFactory(); /* why??? */
+
+    vm.create = function() {
+      vm.newPhoto.$save().then(function(response) {
+        vm.photos.push(response);
+        console.log(vm.photos);
+        vm.newPhoto = new EntriesFactory();
+      })
+    }
   }
 }());
